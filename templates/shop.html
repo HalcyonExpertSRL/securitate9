@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Securitate9</title>
+</head>
+<body>
+    <h1>Shop</h1>
+    <div>
+        {% for product in products %}
+            <div>
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+                <p>{{ product.price }}</p>
+                <a href="{{ url_for('product', product_id=product.id) }}">View</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

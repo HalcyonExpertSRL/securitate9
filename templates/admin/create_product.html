@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Securitate9</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <form method="POST" action="{{ url_for('new_product' if title == 'New Product' else 'update_product', product_id=product.id if title == 'Update Product' else '') }}" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.sku.label }}
+            {{ form.sku(size=32) }}
+        </div>
+        <div>
+            {{ form.name.label }}
+            {{ form.name(size=32) }}
+        </div>
+        <div>
+            {{ form.price.label }}
+            {{ form.price() }}
+        </div>
+        <div>
+            {{ form.description.label }}
+            {{ form.description() }}
+        </div>
+        <div>
+            {{ form.category.label }}
+            {{ form.category(size=32) }}
+        </div>
+        <div>
+            {{ form.image.label }}
+            {{ form.image() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+</body>
+</html>
